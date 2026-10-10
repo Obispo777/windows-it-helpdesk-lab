@@ -1,35 +1,87 @@
-# Lab 01 - User Account Management
+# Lab 01 — Active Directory User Account Management
 
 ## Scenario
 
-A help desk technician receives a request to create a new local Windows user account.
+**Ticket #001:** A new employee, John Smith, is joining the IT department. Create his domain account and add him to the appropriate security group.
 
-## Objective
+## Objectives
 
-Practice creating and managing a local Windows user account.
+- Create and organize Organizational Units (OUs).
+- Create a domain user account in Active Directory.
+- Configure account settings.
+- Create a security group and assign group membership.
+- Verify the account and group membership.
 
 ## Environment
 
-- Windows 11
-- Virtual Machine
+- **Operating System:** Windows Server 2022
+- **Domain:** `corp.local`
+- **Tools:** Active Directory Users and Computers (ADUC), PowerShell
 
-## Steps
+## Steps Performed
 
-1. Open Computer Management.
-2. Navigate to Local Users and Groups.
-3. Select Users.
-4. Create a new user account.
-5. Configure the account.
-6. Verify that the account was successfully created.
+1. Created an `Employees` OU under the `corp.local` domain.
+2. Created an `IT` OU inside `Employees`.
+3. Created the domain user `jsmith` for John Smith in `Employees/IT`.
+4. Configured the account to require a password change at the next logon.
+5. Reviewed the user's Account and Member Of properties.
+6. Created the `IT-Staff1` security group.
+7. Added John Smith to `IT-Staff1`.
+8. Verified the group membership using PowerShell.
 
-## Evidence
+## Screenshots
 
-Screenshots will be added here after completing the lab.
+### 1. Employees Organizational Unit
 
-## Result
+![Employees OU](employeescreated.png)
 
-The user account was successfully created.
+### 2. IT Organizational Unit
+
+![IT OU](ITcreated.png)
+
+### 3. John Smith's User Account
+
+![John Smith account](usercreated.png)
+
+### 4. Account Properties
+
+![Account properties](accprop.png)
+
+### 5. User Group Membership Settings
+
+![John Smith Member Of](membof.png)
+
+### 6. Security Group
+
+![Security group](secgroup.png)
+
+### 7. John Smith's IT Group Membership
+
+![John Smith group membership](memofIT.png)
+
+### 8. Group Membership Verification
+
+![Group membership verification](groupver.png)
+
+### 9. PowerShell Verification
+
+![PowerShell verification](secver.png)
+
+## Results
+
+- Created John Smith's domain account in `corp.local`.
+- Organized the account under `Employees/IT`.
+- Added the account to the `IT-Staff1` security group.
+- Verified group membership using PowerShell.
 
 ## What I Learned
 
-I practiced creating and managing local Windows user accounts. This is a common task that may be performed by an IT support technician when setting up or troubleshooting a user's computer.
+- How Organizational Units help organize domain accounts.
+- How to create and configure Active Directory user accounts.
+- How security groups organize users for access and permissions.
+- How to verify group membership using PowerShell.
+- How to document a help desk onboarding task.
+
+## Skills Practiced
+
+Active Directory, user account management, Organizational Units, security groups, PowerShell, account configuration, and technical documentation.
